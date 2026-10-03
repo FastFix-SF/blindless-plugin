@@ -1,5 +1,4 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "blindless",
   "description": "Blindless owner control plane for Grok Bot: view-only Tasks, Bots, Schedule, and Team. Live status and proofs via hosted MCP \u2014 never sends email or SMS from Blindless.",
   "version": "1.0.0",
@@ -20,5 +19,5 @@
     "calendar",
     "email"
   ],
-  "logo": "assets/icon.png"
+  "logo": "assets/logo.svg"
 }
