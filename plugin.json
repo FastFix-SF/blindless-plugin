@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "blindless",
-  "description": "Blindless owner control plane for Grok Bot: view-only Tasks, Bots, Schedule, and Team. Live status and proofs via hosted MCP \u2014 never sends email or SMS from Blindless.",
-  "version": "1.0.1",
+  "description": "Track your existing bots with Blindless: tasks, saved drafts, schedule, activity and result links. In-chat boards in MCP Apps hosts, plus a shared web dashboard. Source actions stay in your agent.",
+  "version": "1.1.0",
   "author": {
     "name": "FastFix / Blindless",
     "email": "sebastian@fastfix.ai"
@@ -18,6 +18,7 @@
     "agents",
     "owner-dashboard",
     "calendar",
-    "email"
+    "email",
+    "mcp-apps"
   ]
 }

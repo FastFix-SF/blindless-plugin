@@ -18,9 +18,15 @@ Complete the host's browser authorization. If you already use Blindless, open yo
 
 Ask your bot:
 
-> Connect to my Blindless board, call get_connector_status, reuse my existing bots, and follow its reporting_rules. Open my dashboard using ensure_install on that same board.
+> Connect to my Blindless board, call get_connector_status, reuse my existing bots, and follow its reporting_rules. Show my Blindless board in this conversation using show_blindless_board.
 
 The owner approves the connector's board access. Each account authorizes its own connection. Credentials stay in the host connector store; never paste them into tasks, prompts, or URLs. Connections can be revoked from dashboard Settings.
+
+## Board inside the conversation
+
+MCP Apps hosts can render an interactive cream-and-orange card with Tasks, Schedule, Bots and Activity. Users review saved drafts and result links there; card buttons request work through their existing agent. Draft approval sends a short request and checks the selected response revision. Work becomes Active only after a real progress report. The same tool returns structured text in hosts without interactive cards.
+
+Host support and installed version determine rendering; marketplace approval is separate and does not create a permanent sidebar. The full website remains available for team management and the complete board.
 
 ## What appears on the board
 

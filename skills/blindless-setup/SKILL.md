@@ -8,7 +8,7 @@ description: Connect an AI host to Blindless, reuse the owner's board, and repor
 ## Product locks
 
 - Blindless organizes and monitors work. Board controls can assign or remove tasks; source actions such as sending email/SMS stay in the host.
-- To request source work, copy the task prompt or open Grok Bot via its actual `app_url` / `web_url`.
+- In MCP Apps hosts, present the in-chat board and let its deliberate user actions request work through the host. For hosts without interactive cards, use the short task prompt or the bot’s actual `app_url` / `web_url`.
 - No Blindless `/setup` web page — connectors (Gmail, Calendar) are added in this chat.
 - Magic links are one-time; redeem on `https://blindless.ai` (host-bound cookie). Never share bare `?install=` URLs.
 
@@ -17,9 +17,16 @@ description: Connect an AI host to Blindless, reuse the owner's board, and repor
 - Add the hosted MCP at `https://blindless.ai/api/mcp` and complete the host's browser authorization. Credentials belong in the host's secure connector store, never prompts or URLs.
 - Call `get_connector_status` first. Its `install_id` is the board authorized by the owner; use it on every report. An install id alone is not authentication.
 - Reuse the owner's existing bots and provider connections. Reading this skill is not a request to create bots, rename an existing bot, send mail, or edit a calendar. Provision foundation bots only when the owner requests setup and the host supports bot creation; reuse matching bots instead of duplicating them.
+- For an overview, call `show_blindless_board` to show Tasks, Schedule, Bots and Activity inside the conversation. Pass the owner’s local calendar day for Schedule; paginate the selected section. Prefer this to requiring a website link. Hosts without MCP Apps receive structured text.
 - For an owner dashboard link call `ensure_install` with that same id and send its one-time `open_url`. If the browser already has a board, authorize that board rather than creating a separate empty one. A read-only connection cannot mint owner links or write reports.
 - Apply `reporting_rules` returned by `get_connector_status` or `ensure_install` to the existing fleet within the owner's requested scope. The server supplies the current contract; prefer it over remembered instructions.
 - Connect missing Email/Calendar providers through the host. Report connected only after authorization succeeds; never ask for provider passwords or tokens.
+
+## In-chat draft approval
+
+The card shows the saved response and recipient, then rechecks the selected revision before adding a short user approval to chat. Fetch that task using the same authorized board and `get_task`; confirm the selected draft id/revision still matches. If it changed, ask for review again. Preserve the host’s source-action approvals. A request from a card is not a sent email or proof of work. Report actual start and completion normally.
+
+MCP Apps rendering and permanent host navigation are host capabilities; marketplace listing alone does not grant either. Do not claim a card rendered without observing it. Keep website access available for the full board and team management.
 
 ## Keep boards alive
 
